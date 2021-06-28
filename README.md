@@ -1,6 +1,6 @@
 # Nexgo-Android-Public
 
-![Nexgo, Inc](/res/img/nexgo_logo_black.png)
+![Nexgo, Inc](/res/img/nexgo_logo_white.png)
 
 Nexgo is a company focused on providing hardware and software solutions to the Payments industry. Our current line of terminals runs on a customized and hardended version Android operating system. Due to the prevelence of Android in the wild, outside developers will find it exceedingly easy to create software solutions with the Nexgo devices. 
 
