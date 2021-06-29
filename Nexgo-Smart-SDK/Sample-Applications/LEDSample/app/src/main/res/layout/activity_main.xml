@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/toggleRedButton"
+        android:layout_width="171dp"
+        android:layout_height="45dp"
+        android:text="Toggle RED"
+        android:layout_centerInParent="true"
+        app:layout_constraintVertical_bias="0.086" />
+
+    <Button
+        android:id="@+id/toggleGreenButton"
+        android:layout_width="171dp"
+        android:layout_height="45dp"
+        android:text="Toggle GREEN"
+        android:layout_below="@+id/toggleRedButton"
+        android:layout_centerInParent="true"
+        app:layout_constraintVertical_bias="0.173" />
+
+    <Button
+        android:id="@+id/toggleYellowButton"
+        android:layout_width="171dp"
+        android:layout_height="45dp"
+        android:text="Toggle YELLOW"
+        android:layout_below="@+id/toggleGreenButton"
+        android:layout_centerInParent="true"
+        app:layout_constraintVertical_bias="0.262" />
+
+    <Button
+        android:id="@+id/toggleBlueButton"
+        android:layout_width="171dp"
+        android:layout_height="45dp"
+        android:text="Toggle BLUE"
+        android:layout_below="@+id/toggleYellowButton"
+        android:layout_centerInParent="true"
+        app:layout_constraintVertical_bias="0.351" />
+</RelativeLayout>

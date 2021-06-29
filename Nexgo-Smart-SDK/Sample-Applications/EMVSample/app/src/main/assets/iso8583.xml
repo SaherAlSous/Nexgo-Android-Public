@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cn8583-config>
+    <!--
+        A   - character in left, append blank right(A, AN, ANS, AS) 字母、数字和/或特殊符号，左靠，右部多余部分填空格，包括 A, AN, ANS, AS
+        N   - num in right, append 0 left 数值，右靠，首位有效数字前填充零。若表示金额，则最右两位表示角分(在国内使用,默认压缩为BCD码,所以处理上和Z相同)
+        H   - hex data hex格式，原始数据
+        ..	- length of data length is 1 表示可变长域长度用1个字节表示
+        ...	- length of data length is 2 表示可变长域长度用2个字节表示
+
+        lenType - data type of length: ASC HEX BCD(default) (只有变长域才存在)  - ASC HEX BCD(不填则默认BCD)
+        align - data align, use for const length filed: RIGHT  LEFT (主要定长域使用) RIGHT  LEFT   左右靠，另外一边，字符填空格，其他填0，
+
+        padding - padding data, if have no this data, it will use default.(must 1 byte, "AA"(correct) "A"(uncorrect))必须1个字节，例如FF，用于域写数据前的填充(不填则默认使用上面推荐)
+        ex:"00"->0x00,  "30"->'0'  "20"->' '  "FF"->0xFF
+    -->
+
+    <field index="0" type="N4"    align="RIGHT" lenType="BCD" padding="30"/><!--waring: msg type-->
+    <field index="1" type="H8"    align="RIGHT" lenType="BCD" padding="30"/><!--waring: msg Bitmaptmap-->
+
+    <field index="2" type="N..19"    align="LEFT" lenType="BCD" padding="00"/>
+    <field index="3" type="N6" align="RIGHT" lenType="BCD" padding="00"/>
+    <field index="4" type="N12" align="RIGHT" lenType="BCD" padding="00"/>
+    <field index="5" type="N12" align="RIGHT" lenType="BCD" padding="00"/>
+    <field index="6" type="N12" align="RIGHT" lenType="BCD" padding="00"/>
+    <field index="7" type="N12" align="RIGHT" lenType="BCD" padding="00"/>
+    <field index="8" type="N12" align="RIGHT" lenType="BCD" padding="00"/>
+    <field index="9" type="N12" align="RIGHT" lenType="BCD" padding="00"/>
+    <field index="10" type="N12" align="RIGHT" lenType="BCD" padding="00"/>
+    <field index="11" type="N6" align="RIGHT" lenType="BCD" padding="00"/>
+    <field index="12" type="N6" align="RIGHT" lenType="BCD" padding="00"/>
+    <field index="13" type="N4" align="RIGHT" lenType="BCD" padding="00"/>
+    <field index="14" type="N4" align="RIGHT" lenType="BCD" padding="00"/>
+    <field index="15" type="N4" align="RIGHT" lenType="BCD" padding="00"/>
+    <field index="16" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="17" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="18" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="19" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="20" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="21" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="22" type="N3" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="23" type="N3" align="RIGHT" lenType="BCD" padding="00"/>
+    <field index="24" type="N3" align="RIGHT" lenType="BCD" padding="00"/>
+    <field index="25" type="N2" align="RIGHT" lenType="BCD" padding="00"/>
+    <field index="26" type="N2" align="RIGHT" lenType="BCD" padding="00"/>
+    <field index="27" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="28" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="29" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="30" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="31" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="32" type="N..11" align="RIGHT" lenType="BCD" padding="00"/>
+    <field index="33" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="34" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="35" type="N..37" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="36" type="N...104" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="37" type="A12" align="RIGHT" lenType="BCD" padding="00"/>
+    <field index="38" type="A6" align="RIGHT" lenType="BCD" padding="00"/>
+    <field index="39" type="A2" align="RIGHT" lenType="BCD" padding="00"/>
+    <field index="40" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="41" type="A8" align="RIGHT" lenType="BCD" padding="20"/>
+    <field index="42" type="A15" align="RIGHT" lenType="BCD" padding="20"/>
+    <field index="43" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="44" type="A..25" align="RIGHT" lenType="BCD" padding="00"/>
+    <field index="45" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="46" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="47" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="48" type="N...322" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="49" type="A3" align="RIGHT" lenType="BCD" padding="30"/>
+    <field index="50" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="51" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="52" type="H8" align="RIGHT" lenType="BCD" padding="00"/>
+    <field index="53" type="N16" align="RIGHT" lenType="BCD" padding="00"/>
+    <field index="54" type="A...20" align="RIGHT" lenType="BCD" padding="00"/>
+    <field index="55" type="H...255" align="RIGHT" lenType="BCD" padding="00"/>
+    <field index="56" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="57" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="58" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="59" type="H...255" align="RIGHT" lenType="BCD" padding="00"/>
+    <field index="60" type="N...17" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="61" type="N...29" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="62" type="H...99" align="RIGHT" lenType="BCD" padding="00"/>
+    <field index="63" type="A...163" align="LEFT" lenType="BCD" padding="20"/>
+    <field index="64" type="H8" align="RIGHT" lenType="BCD" padding="00"/>
+
+    <field index="65" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="66" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="67" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="68" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="69" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="70" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="71" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="72" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="73" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="74" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="75" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="76" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="77" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="78" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="79" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="80" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="81" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="82" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="83" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="84" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="85" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="86" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="87" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="88" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="89" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="90" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="91" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="92" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="93" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="94" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="95" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="96" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="97" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="98" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="99" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="100" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="101" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="102" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="103" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="104" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="105" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="106" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="107" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="108" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="109" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="110" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="111" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="112" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="113" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="114" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="115" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="116" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="117" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="118" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="119" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="120" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="121" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="122" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="123" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="124" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="125" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="126" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="127" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+    <field index="128" type="N12" align="LEFT" lenType="BCD" padding="00"/>
+</cn8583-config>

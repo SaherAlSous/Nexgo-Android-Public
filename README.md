@@ -2,11 +2,16 @@
 
 ![Nexgo, Inc](/res/img/nexgo_logo_white.png)
 
-Nexgo is a company focused on providing hardware and software solutions to the Payments industry. Our current line of terminals runs on a customized and hardended version Android operating system. Due to the prevelence of Android in the wild, outside developers will find it exceedingly easy to create software solutions with the Nexgo devices. 
+Nexgo is focused on providing hardware and software solutions to the Payments industry. Our current line of point-of-sale terminals runs a customized and hardended version Android operating system that has been certified with PCI. Due to the prevelence of Android in the "wild", outside developers will find it exceedingly easy to create software solutions on the Nexgo devices. 
 
-We focus on [3] main scenarios:
-  1. Allowing outside parties to use Semi-Integration to process payments using our pre-certified payment applications. 
-  2. Allowing outside parties the ability to create their own payment application using our device and its SDK. 
-  3. Allowing outside parties to create their own solutions that may be outside of payments, such as ticketing and registration. 
-  
+This repository  will focus on [2] main scenarios:
+  1. Providing the ability to use Semi-Integration to allow 3rd parties to easily take payments using our pre-certified payment applications. Our Semi-Integration solution is called *SmartConnect* on the Android devices, and it allows initiating payment transactions by sending a message to our payment application over standard Android 'Intents' or standard TCP. 
+  2. Providing the ability to use our device SDK to allow 3rd parties to create their own solutions from the ground up using the integrated  MSR/EMV/NFC readers, printer, and other hardware on the device.
+
+Contents:
+  * Semi-Integration (SmartConnect)
+  * Nexgo Device SDK
+  * Sample Applications
+  * FAQ
+
 This repository will provide the information necessary to get you off the ground and to begin integrating into the Nexgo family of devices. 

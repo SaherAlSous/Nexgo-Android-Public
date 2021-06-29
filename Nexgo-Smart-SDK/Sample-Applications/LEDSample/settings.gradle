@@ -1,0 +1,2 @@
+rootProject.name='LEDSample'
+include ':app'
