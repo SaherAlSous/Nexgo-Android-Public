@@ -14,8 +14,6 @@ This repository  will focus on [2] main scenarios:
 1. Native Application Development (i.e. requiring device SDK)
    1. Use our device SDK to allow 3rd parties to create their own solutions from the ground up using the integrated  MSR/EMV/NFC readers, printer, and other hardware on the device.
 
-![Android Dev](/res/img/android_dev.svg)
-
 Contents:
   * [Semi-Integration](Semi-Integration/) (SmartConnect)
     *  Sample Applications
@@ -24,7 +22,7 @@ Contents:
     *  Sample Applications
 	*  Documentation
 	*  SDK Library
-  * Development Process	
+  * [Development Process](Development-Process/)
     *  This contains information for developers on the flow for application development, including how distribution works on Nexgo and how to sign applications for running on release devices.
   * FAQ
 
