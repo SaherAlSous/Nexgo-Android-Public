@@ -2,6 +2,7 @@
 
 ![Nexgo, Inc](/res/img/nexgo_logo_white.png)
 
+
 Nexgo is focused on providing hardware and software solutions to the Payments industry. Our current line of point-of-sale terminals runs a customized and hardended version Android operating system that has been certified with PCI. Due to the prevelence of Android in the "wild", outside developers will find it exceedingly easy to create software solutions on the Nexgo devices. 
 
 This repository  will focus on [2] main scenarios:
@@ -10,8 +11,13 @@ This repository  will focus on [2] main scenarios:
 
 Contents:
   * Semi-Integration (SmartConnect)
+    *  Sample Applications
+	*  Documentation
   * Nexgo Device SDK
-  * Sample Applications
+    *  Sample Applications
+	*  Documentation
+	*  SDK Library
+  * Getting Started
   * FAQ
 
 This repository will provide the information necessary to get you off the ground and to begin integrating into the Nexgo family of devices. 
