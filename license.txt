@@ -1,0 +1,37 @@
+## Terms of Use / User Agreement
+YOU SHOULD CAREFULLY READ ALL THE TERMS, CONDITIONS AND RESTRICTIONS OF THIS LICENSE AGREEMENT BEFORE INSTALLING THE SOFTWARE PACKAGE. YOUR INSTALLATION OF THE SOFTWARE PACKAGE PRESUMES YOUR ACCEPTANCE OF THE TERMS, CONDITIONS, AND RESTRICTIONS CONTAINED IN THIS AGREEMENT. IF YOU DO NOT AGREE WITH THESE TERMS, CONDITIONS, AND RESTRICTIONS, PROMPTLY RETURN THE SOFTWARE PACKAGE AND ASSOCIATED DOCUMENTATION TO THE ADDRESS ON THE FRONT PAGE OF THIS DOCUMENT, ATTENTION: CUSTOMER SUPPORT.
+
+#### TERMS, CONDITIONS, AND RESTRICTIONS
+Shenzhen Xinguodu Technology Co., Ltd (the "Licensor") owns and has the right to distribute the described software and documentation, collectively referred to as the "Software”.
+
+#### LICENSE 
+Licensor grants you (the "Licensee") the right to use the Software in conjunction with
+Xinguodu products. LICENSEE MAY NOT COPY, MODIFY, OR TRANSFER THE SOFTWARE IN WHOLE OR IN PART EXCEPT AS EXPRESSLY PROVIDED IN THIS AGREEMENT. Licensee may not decompile, disassemble, or in any other manner attempt reverse reverse engineer the Software.
+Licensee shall not tamper with, bypass, or alter any security features of the software or attempt to do so.
+
+#### TRANSFER 
+Licensee may not transfer the Software or license to the Software to another party without the prior written authorization of the Licensor. If Licensee transfers the Software without authorization, all rights granted under this Agreement are automatically terminated.
+
+#### COPYRIGHT
+The Software is copyrighted. Licensee may not copy the Software except for archival purposes or to load for business operations. All other copies of the Software are in violation of this Agreement.
+
+#### TERM
+This Agreement is in effect as long as Licensee continues the use of the Software. The Licensor also reserves the right to terminate this Agreement if Licensee fails to comply with any of the terms, conditions, or restrictions contained herein. Should Licensor terminate this Agreement due to Licensee's failure to comply, Licensee agrees to return the Software to Licensor. Receipt of returned Software by the Licensor shall mark the termination.
+
+#### LIMITED WARRANTY
+Licensor warrants to the Licensee that the disk(s) or other media on which the Software is recorded are free from defects in material or workmanship under normal use.
+
+THE SOFTWARE IS PROVIDED AS IS. LICENSOR MAKES NO OTHER WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+Because of the diversity of conditions and PC hardware under which the Software may be used, Licensor does not warrant that the software will meet Licensee specifications or that the operation of the Software will be uninterrupted or free of errors.
+
+IN NO EVENT WILL LICENSOR BE LIABLE FOR ANY DAMAGES, INCLUDING ANY LOST PROFITS, LOST SAVINGS, OR OTHER INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE, OR INABILITY TO USE, THE SOFTWARE. 
+
+Licensee's sole remedy in the event of a defect in material or workmanship is expressly limited to replacement of the Software disk(s), if applicable.
+
+#### GOVERNING LAW
+If any provision of this Agreement is found to be unlawful, void, or unenforceable, that provision shall be removed from consideration under this Agreement and will not affect the enforceability of any of the remaining provisions. This Agreement shall be governed by the Laws of the State of California and shall inure to the benefit of Shenzhen Xinguodu Technology Co., Ltd, its successors or assigns.
+
+#### ACKNOWLEDGMENT
+LICENSEE ACKNOWLEDGES THAT HE HAS READ THIS AGREEMENT, UNDERSTANDS ALL OF ITS TERMS, CONDITIONS, AND RESTRICTIONS, AND AGREES TO BE BOUND BY THEM. LICENSEE ALSO AGREES THAT THIS AGREEMENT SUPERSEDES ANY AND ALL VERBAL AND WRITTEN COMMUNICATIONS BETWEEN LICENSOR AND LICENSEE OR THEIR ASSIGNS RELATING TO THE SUBJECT MATTER OF THIS AGREEMENT.
+
+QUESTIONS REGARDING THIS AGREEMENT SHOULD BE ADDRESSED IN WRITING TO Shenzhen Xinguodu Technology Co., Ltd, ATTENTION: CUSTOMER SUPPORT, AT THE ADDRESS LISTED IN THIS DOCUMENT OR E-MAILED TO SUPPORT@XINGUODU.COM.
