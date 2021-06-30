@@ -22,6 +22,10 @@ Contents:
 	*  Documentation
 	*  SDK Library
   * **[Development Process](Development%20Process/) -** *Information for developers on the flow for application development, including how distribution works on Nexgo and how to sign applications for running on release devices.*
+    *  Application Signing
+	*  Debug / Release Mode Information
+	*  Development Considerations
+	*  Application Update / Distribution Informaion
   * FAQ
 
 This repository will provide the information necessary to get you off the ground and to begin integrating into the Nexgo family of devices. 
