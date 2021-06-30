@@ -13,10 +13,11 @@ Contents:
   * [Semi-Integration](Semi-Integration/) (SmartConnect)
     *  Sample Applications
 	*  Documentation
-  * Nexgo Device SDK
+  * [Nexgo Device SDK](Nexgo-Smart-SDK/)
     *  Sample Applications
 	*  Documentation
 	*  SDK Library
+  * Development Process	
   * Getting Started
   * FAQ
 

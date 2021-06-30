@@ -17,6 +17,8 @@ Please review the SmartConnect API PDF documentation in this repository for full
 * [SmartConnect Intent](#smartconnect-intent)
   * [Example Intent Request](#example-intent-request)
   * [Example Intent Response](#example-intent-response)
+* [SmartConnect TCP](#smartconnect-tcp)
+  * [Example TCP Request](#example-tcp-request)
 * [Miscellaneous](#miscellaneous)
   * [Parse Signature from SmartConnect Response](#parse-signature-from-smartconnect-response)
   * [resultCode Values](#resultcode-values)
@@ -66,6 +68,70 @@ For example, we can get the ‘Transaction Data’ by parsing the ‘transdata�
 String response = data.getStringExtra("transdata");
 ```
 
+## SmartConnect TCP
+The Android Intent integration mode is the preferred method for communicating with the Integrator application for a number of reasons.
+
+### Example TCP Request
+The following is a SmartConnect JSON request message to perform a basic **Sale** for **$1.00**:
+```json
+{
+  "action":{
+    "processor":"EVO",
+    "receipt":true
+  },
+  "payment":{
+    "type":"Sale",
+    "amount":"1.00"
+  }
+}
+```
+
+To send a transaction request message to the Integrator using TCP, we need to create a connection to the device with the port the application is listening on. Afterwards, send the TCP request and listen for the response:
+```java
+//--------------[POS Network Settings]----------------------------------
+public String POSIPADDR = "192.168.30.6";  //The IP Address of N5 we are trying to connect to (must be routable)(should be on same LAN)
+static final int APP_PORT = 8765;          //Port SmartConnect is listening on (TCP is 8765)
+static int CONN_TIMEOUT = 200000;          //Connect Timeout (PC -> N5)
+static int READ_TIMEOUT = 120000;          //Read Timeout (millis)
+//-------------------[END]----------------------------------------------
+
+StringBuilder response = new StringBuilder();
+
+//Build the JSON request string
+String request = message;
+
+try {
+  //Create new socket that will connect to the POS endpoint (POS_IP_ADDR:8765)
+  Socket socket = new Socket(); // = new Socket(hostURL, hostPort);
+  socket.connect(new InetSocketAddress(POSIPADDR, APP_PORT), CONN_TIMEOUT); //set timeout for host failure
+  socket.setSoTimeout(READ_TIMEOUT);
+
+  //write data
+  BufferedOutputStream bos = new BufferedOutputStream(socket.getOutputStream());
+  bos.write(request.getBytes("UTF-8"));
+  bos.flush();
+
+  //read response
+  DataInputStream dis = new DataInputStream(socket.getInputStream());
+  response.append(dis.readLine());
+
+
+  //shutdown socket stuff
+  socket.shutdownInput();
+  socket.shutdownOutput();
+  socket.close();
+
+	} catch (IOException e) {
+    onConnectError(e.getMessage());
+    e.printStackTrace();
+    response.append(e.toString());
+    return;
+	}
+
+```
+**Note**: `message` should be the full JSON request message.
+
+
 ## Miscellaneous
 
 ### Parse Signature from SmartConnect Response
@@ -88,7 +154,7 @@ The following table represents the possible resultCode values:
 
 | resultCode | Description |
 | :--------------- | :--------------- |
-| 00 | LED on |
+| 00 | Success / Approved |
 | Non-zero | Unsuccessful; check the processor response list for the error meaning. |
 | -50X | General Application Error |
 | -501 | Transaction Cancelled |
