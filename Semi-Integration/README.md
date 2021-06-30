@@ -89,10 +89,10 @@ The following is a SmartConnect JSON request message to perform a basic **Sale**
 To send a transaction request message to the Integrator using TCP, we need to create a connection to the device with the port the application is listening on. Afterwards, send the TCP request and listen for the response:
 ```java
 //--------------[POS Network Settings]----------------------------------
-public String POSIPADDR = "192.168.30.6";  //The IP Address of N5 we are trying to connect to (must be routable)(should be on same LAN)
-static final int APP_PORT = 8765;          //Port SmartConnect is listening on (TCP is 8765)
-static int CONN_TIMEOUT = 200000;          //Connect Timeout (PC -> N5)
-static int READ_TIMEOUT = 120000;          //Read Timeout (millis)
+String POSIPADDR = "192.168.30.6"; //The IP Address of N5 we are trying to connect to (must be routable)(should be on same LAN)
+int APP_PORT = 8765;               //Port SmartConnect is listening on (TCP is 8765)
+int CONN_TIMEOUT = 200000;         //Connect Timeout (PC -> N5)
+int READ_TIMEOUT = 120000;         //Read Timeout (millis)
 //-------------------[END]----------------------------------------------
 
 StringBuilder response = new StringBuilder();
@@ -122,10 +122,9 @@ try {
   socket.close();
 
 	} catch (IOException e) {
-    onConnectError(e.getMessage());
-    e.printStackTrace();
-    response.append(e.toString());
-    return;
+		onConnectError(e.getMessage());
+		e.printStackTrace();
+		response.append(e.toString());
 	}
 
 ```
