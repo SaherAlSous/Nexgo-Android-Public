@@ -10,9 +10,9 @@ Nexgo provides a .aar file that allows the library to be easily imported into An
 This repository contains the following items:
 *  **SmartSDK (Device SDK)**
    *  This contains the library for developing applications that interact with the hardware and other system items on the device (i.e. EMV reader, setting system time, getting S/N of device, etc.)
-*  **AAR Libraries and Release Documentation**
+*  **[AAR Libraries and Release Documentation](Library%20and%20Release%20Documentation/)**
     * This contains the importable AAR library that allows the developer to use the Nexgo SDK. 
-* **[Sample-Applications](!Sample-Applications)** that can be imported/built as-is such as:
+* **[Sample-Applications](Sample-Applications/)** that can be imported/built as-is such as:
      *  **EMVSample** - Sample EMV application for reading data from an EMV card and performing a transaction natively. 
 	 *  **MSRSample** - Sample MSR application for reading data from an MSR card (payment or RAW)
 	 *  **PrinterSample** - Sample application for using the integrated printer to print receipts from an application. 
