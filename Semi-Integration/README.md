@@ -27,6 +27,13 @@ Please review the SmartConnect API PDF documentation in this repository for full
 ## SmartConnect Flow
 ![SmartConnect Flow](/res/img/smartconnect_flow.jpg)
 
+## SmartConnect Variants
+The SmartConnect Semi-Integration method supports two ways of communication:
+1. Using Android Intents
+2. Using TCP Connections
+
+If your application is running on the same device as the payment application - it is strongly recommended to use Android Intents for communicating with it. TCP connections should ideally only be used when the initiating application is not on the same device as the payment application. 
+
 ## SmartConnect Intent
 The Android Intent integration mode is the preferred method for communicating with the Integrator application for a number of reasons.
 

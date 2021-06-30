@@ -59,8 +59,9 @@ While these devices are built using Android, they have been modified and hardene
 *  The devices cannot connect to 'open' and/or 'WEP' WIFI networks. Only WPA/WPA2 networks are supported. Enterprise WPA is supported as well.
 *  Standard android NFC libraries may not function as intended on the devices. If you need to use NFC for reading Tags, EMV cards, etc. - there are hardened NEXGO libraries available for handling this. 
 *  Development mode (i.e. 'Debug Mode') terminals can install any unsigned APK; however, Release Mode terminals will only install APKs signed with a valid key provided by NEXGO.
-*  Application distribution needs to be taken into account. There are a few ways you can handle 
-*  Nexgo uses our 'XTMS' system to handle App, Certificate, and FW updates over-the-air to the terminals. 
+*  [Application distribution](#application-updates) needs to be taken into account. There are a few ways you can handle 
+    *  Nexgo uses our 'XTMS' system to handle App, Certificate, and FW updates over-the-air to the terminals. 
+	*  Alternatively, you can 'sideload' the FW/Certs/Apps using USB or an SD card - though this would not be ideal if you plan on changing the software on the device in the future (including updates).
 
 ## Software Updates + Distribution
 
