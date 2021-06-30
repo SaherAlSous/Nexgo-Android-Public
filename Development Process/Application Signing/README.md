@@ -26,11 +26,19 @@ Below is a more detailed, step-by-step, guide for performing the signature proce
 ![New Sig Prompt](/res/img/4_new_signature_prompt.png)
 1. You will be returned to the main Signature page. The uploaded file should show up on the top row of the file listings, and may take a few moments before it is ready for download. 
 
+> Note: Filenames can only contain one '.' character which is usually used in the '.apk' extension. You must rename any file before uploading so that it does not contain more than one '.' character (i.e. TestV1.0.apk -> TestV1_0.apk).
+
 ## Download the Nexgo-Signed APK
 1. Once you have uploaded an APK for signing, navigate to the main *Android Signature* page. Your file should appear on the top row of the listings. 
 1. Find the corresponding file listing, and click the **Download** button to download the *signed* version of the application. 
 ![Download APK](/res/img/5_download_file.png)
 1. When prompted, select where to save the file on your computer and click SAVE. 
 1. Signed file will download accordingly. 
+
+> Note: If the download button instead says 'Processing' - wait a few moments then click the **Android Signature** menu again to refresh the page. 
+
+### Notes
+1. If you do not have an account to login to the sms.xgd.com server, please contact [sdk@nexgo.us](mailto:sdk@nexgo.us) to have an account created for you. This step may require additional documentation for security reasons. 
+1. If you add any signature in Android studio when building the application - you MUST ALWAYS do so going forward for a package to be 'updatable' from a previous version. This is an Android requirement. 
 
 
