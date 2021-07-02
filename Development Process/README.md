@@ -9,6 +9,7 @@ The development process is quite straightforward for developing solutions on the
 
 ## Table of Contents
 * [Supported Android Versions](#supported-android-versions)
+* [Basic Development Requirements](#basic-development-requirements)
 * [Developer Mode / Debug Mode](#developer-mode-debug-mode)
   * [Release Mode](#release-mode)
   * [Debug Mode](#debug-mode)
@@ -27,8 +28,19 @@ The Nexgo terminals run on a number of different versions of Android. They are l
 | N5S | 7.0 |
 | N6 | 7.0 |
 
+## Basic Development Requirements
+In order to get started developing applications on the Nexgo terminals, you will need the following items:
+
+1. Nexgo POS Terminal in Debug Mode
+2. Computer with Android Studio installed
+3. Micro-USB cable (N5) or USB-C cable (N6)
+4. ADB Drivers installed on the development machine
+
 ## Developer Mode / Debug Mode 
 There is an important different between **DEBUG** Mode and **RELEASE** Mode Nexgo terminals. 
+
+Devices in Debug Mode will display Debug Mode in red letters at the bottom right of the screen:
+![Debug Mode](../res/img/debugMode.png)
 
 ### Release Mode
 1. Devices in *RELEASE MODE* can only install applications signed with a Nexgo provided key/signature. 
