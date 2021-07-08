@@ -2,10 +2,14 @@ package com.nexgo.camerascannersample;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.nexgo.oaf.apiv3.APIProxy;
 import com.nexgo.oaf.apiv3.DeviceEngine;
@@ -50,12 +54,22 @@ public class MainActivity extends AppCompatActivity implements OnScannerListener
         });
     }
 
+    /**
+     * The scanner must be initialized before the scanner can be used - i.e. before startScan(..) can be called.
+     *
+     * After attempting to initialize the scanner, it will call this method to return the result. If successful,
+     * you can begin the scanning. Otherwise, you should handle the error.
+     *
+     * @param resultCode - the result of the scanner init (i.e. SdkResult.*)
+     */
     @Override
     public void onInitResult(int resultCode) {
         switch (resultCode) {
             case SdkResult.Success:
                 Log.d(TAG, "Scanner Init Success");
                 Log.d(TAG, "Calling startScan(..)");
+
+                //Since the scanner was initialized successfuly, we can call the scanner.startScan(..) function to begin the 'scan'.
                 scanner.startScan(60, MainActivity.this);
                 break;
             default:
@@ -64,11 +78,27 @@ public class MainActivity extends AppCompatActivity implements OnScannerListener
         }
     }
 
+    /**
+     * This callback method is called by the Scanner once it completes a scanning action, whether successful or not.
+     *
+     * You should code the required functionality into this method to handle the result accordingly.
+     *
+     * @param resultCode - the result of the scan (i.e. SdkResult.*)
+     * @param s - The decoded string that was scanned by the scanner
+     */
     @Override
-    public void onScannerResult(int resultCode, String s) {
+    public void onScannerResult(int resultCode, final String s) {
         switch (resultCode) {
             case SdkResult.Success:
                 Log.d(TAG, "Got Code: " + s);
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        showAlertDialog("Scan Success",
+                                "Barcode:  " + s,
+                                MainActivity.this);
+                    }
+                });
                 break;
             case SdkResult.Scanner_Customer_Exit:
                 Log.d(TAG, "Requested Exit Scanner OK.");
@@ -80,5 +110,24 @@ public class MainActivity extends AppCompatActivity implements OnScannerListener
                 Log.e(TAG, "Other general error.");
         }
         scanner.stopScan();
+    }
+
+    /**
+     * This function is used to display text in an 'AlertDialog' displayed to the user.
+     * <p>
+     * In this sample application, it is used to display the decoded barcode from the scan.
+     *
+     * @param body - The text to be displayed in the AlertDialog.
+     */
+    public void showAlertDialog(String title, String body, final Context context) {
+        new AlertDialog.Builder(context)
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                })
+                .setTitle(title)
+                .setMessage(body)
+                .show();
     }
 }
