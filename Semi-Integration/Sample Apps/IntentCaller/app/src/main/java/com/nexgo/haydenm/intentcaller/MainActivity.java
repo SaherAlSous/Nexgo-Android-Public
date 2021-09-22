@@ -31,6 +31,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.List;
+import com.google.gson.Gson;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -48,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
     private JSONObject Payment;
 
     private String pSaleType;
+    private boolean pReceipt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -113,9 +115,9 @@ public class MainActivity extends AppCompatActivity {
 
         //Action Parameters
         boolean pSignature        =  true; //Require on-screen signature
-        boolean pReceipt          =  true; //Pring a receipt
-        boolean pManual           =  true;  //Allow manual/keyed entry (as opposed to SWIPE/EMV/TAP)
+        boolean pManual           =  true; //Allow manual/keyed entry (as opposed to SWIPE/EMV/TAP)
         String pProcessor         =  "EVO";
+        pReceipt                  =  true; //Print a receipt
 
         try {
             //Put the required additional parameters for a 'Credit Sale' into the Action JSONObject
@@ -190,6 +192,16 @@ public class MainActivity extends AppCompatActivity {
                 String response = data.getStringExtra("transdata");
                 System.out.println("RESPONSE ====> " + response);
 
+                // Create gson object
+                Gson gson = new Gson();
+                // Convert JSON string to Java objects
+                ResponseParser pResponse = gson.fromJson(response, ResponseParser.class);
+                System.out.println("pResponse Object => " + pResponse);
+
+                // Retrieve Transaction ID
+                String transID = pResponse.getPacketData().getTransactionID();
+                System.out.println("TransactionID=" + transID);
+
                 //Check if there is a signature in the response data and it is not null.
                 if (data.hasExtra("signature") && data.getByteArrayExtra("signature") != null && new String(data.getByteArrayExtra("signature")).compareToIgnoreCase("") != 0)
                 {
@@ -211,11 +223,15 @@ public class MainActivity extends AppCompatActivity {
                     //Create bitmap object from signature byte array
                     Bitmap signatureBitmap = BitmapFactory.decodeByteArray(data.getByteArrayExtra("signature"), 0, data.getByteArrayExtra("signature").length);
 
-                    //Append the title above where the signature will print
-                    printer.appendPrnStr("Customer Signature:", 34, AlignEnum.LEFT, true);
+                    // Print customer signature to the receipt
+                    // If pReceipt = false, do not use the code inside the if statement
+                    if (Boolean.TRUE.equals(pReceipt)) {
+                        //Append the title above where the signature will print
+                        printer.appendPrnStr("Customer Signature:", 34, AlignEnum.LEFT, true);
 
-                    //Append the signature image to the printer queue
-                    printer.appendImage(signatureBitmap, AlignEnum.CENTER);
+                        //Append the signature image to the printer queue
+                        printer.appendImage(signatureBitmap, AlignEnum.CENTER);
+                    }
 
                     //Begin the print process using the the values set from above. Use callback to check print result.
                     printer.startPrint(true, new OnPrintListener() {
