@@ -224,8 +224,8 @@ public class MainActivity extends AppCompatActivity {
                     Bitmap signatureBitmap = BitmapFactory.decodeByteArray(data.getByteArrayExtra("signature"), 0, data.getByteArrayExtra("signature").length);
 
                     // Print customer signature to the receipt
-                    // If pReceipt = false, do not use the code inside the if statement
-                    if (Boolean.TRUE.equals(pReceipt)) {
+                    // If pReceipt is set to false, do not use the code inside the if statement
+                    if (pReceipt == true) {
                         //Append the title above where the signature will print
                         printer.appendPrnStr("Customer Signature:", 34, AlignEnum.LEFT, true);
 
